@@ -1,6 +1,5 @@
 import ctypes
 import datetime
-import msvcrt
 import os
 import time
 
