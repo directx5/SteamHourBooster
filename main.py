@@ -26,8 +26,7 @@ while True:
         time.sleep(0.5)
         break
     else:
-        sliced = str(datetime.datetime.now() - start).split(":")
-        current_time = f"{sliced[0]}.{sliced[1]}.{sliced[2].split('.')[0]}"
+        current_time = ".".join(str(datetime.datetime.now() - start).replace(":", ".").split(".")[:-1])
         os.system(f"title Steam Booster - [{client.username}] - [{current_time}]")
         print(f"\r[Steam Booster] -> Username: [{client.username}] | Boosting For: [{current_time}]", end="")
         gevent.sleep(0.1)
