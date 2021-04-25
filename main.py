@@ -12,12 +12,12 @@ if run.lower() == "y":
 
 with open("config", "r") as f:
     config = f.read().split("\n")
-    account = config[0].split(":")
+    account = dict(zip(["username", "password"], config[0].split(":")))
     games = [int(x.strip()) for x in set(config[1].split(",")) if x.strip().isdigit()]
 
 os.system("title Steam Hour Booster")
 client = steam.client.SteamClient()
-client.cli_login(account[0], account[1])
+client.cli_login(account["username"], account["password"])
 client.change_status(persona_state=1)
 client.games_played(games)
 os.system("cls")
