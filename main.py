@@ -22,7 +22,7 @@ while True:
     if ctypes.windll.user32.GetAsyncKeyState(0x1B):
         break
     else:
-        current_time = ".".join(str(datetime.datetime.now() - start).replace(":", ".").split(".")[:-1])
+        current_time = str(datetime.datetime.now() - start).split(".")[0]
         os.system(f"title Steam Hour Booster - {client.user.name} - {current_time}")
         print(f"\r[Steam Hour Booster] -> Username: [{client.user.name}] | Boosting For: [{current_time}]", end="")
 
