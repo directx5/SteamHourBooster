@@ -13,7 +13,7 @@ if run.lower() == "y":
 with open("config", "r") as f:
     config = f.read().split("\n")
     account = config[0].split(":")
-    games = list(map(int, [x.strip() for x in set(config[1].split(",")) if x.strip().isdigit()]))
+    games = [int(x.strip()) for x in set(config[1].split(",")) if x.strip().isdigit()]
 
 os.system("title Steam Hour Booster")
 client = steam.client.SteamClient()
