@@ -5,6 +5,10 @@ import os
 import steam.client
 import steam.enums.common
 
+run = str(input("Do you want to open the config file? [Y/N]: "))
+if run.lower() == "y":
+    subprocess.call(["notepad", "config"])
+
 with open("config", "r") as f:
     config = f.read().split("\n")
     account = config[0].split(":")
