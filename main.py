@@ -4,7 +4,6 @@ import os
 import subprocess
 
 import steam.client
-import steam.enums.common
 
 run = str(input("Do you want to open the config file? [Y/N]: "))
 if run.lower() == "y":
