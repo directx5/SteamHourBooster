@@ -32,6 +32,7 @@ while True:
         current_time = str(datetime.datetime.now() - start).split(".")[0]
         os.system(f"title Steam Hour Booster - {client.user.name} - {current_time}")
         print(f"\r[Steam Hour Booster] -> Username: [{client.user.name}] | Boosting For: [{current_time}]", end="")
+        
 
 client.logout()
 client.disconnect()
