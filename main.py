@@ -2,7 +2,6 @@ import ctypes
 import datetime
 import os
 import subprocess
-
 import steam.client
 
 run = str(input("Do you want to open the config file? [Y/N]: "))
