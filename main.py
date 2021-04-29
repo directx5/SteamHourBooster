@@ -1,6 +1,6 @@
+import os
 import ctypes
 import datetime
-import os
 import subprocess
 import steam.client
 
