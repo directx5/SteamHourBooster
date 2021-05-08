@@ -9,7 +9,7 @@ if str(input("Do you want to open the config file? [Y/N]: ")).lower() == "y"::
     subprocess.call(["notepad", "config"])
     
 
-with open("config", "r") as f:
+with open("config", "r", encoding="UTF-8") as f:
     config = f.read().split("\n")
     account = dict(zip(["username", "password"], config[0].split(":")))
     games = [int(x.strip()) for x in set(config[1].split(",")) if x.strip().isdigit()]
