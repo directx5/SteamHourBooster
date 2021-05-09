@@ -5,7 +5,7 @@ import subprocess
 import steam.client
 
 
-if str(input("Do you want to open the config file? [Y/N]: ")).lower() == "y"::
+if str(input("Do you want to open the config file? [Y/N]: ")).lower() == "y":
     subprocess.call(["notepad", "config"])
     
 
