@@ -10,9 +10,9 @@ if not os.path.exists("config"):
         config.write("username:password\ngameid,gameid,gameid,gameid,gameid,gameid")
         config.close()
     subprocess.call(["notepad", "config"])
-
-if str(input("Do you want to open the config file? [Y/N]: ")).lower() == "y":
-    subprocess.call(["notepad", "config"])
+else:
+    if str(input("Do you want to open the config file? [Y/N]: ")).lower() == "y":
+        subprocess.call(["notepad", "config"])
 
 with open("config", "r", encoding="UTF-8") as f:
     config = f.read().split("\n")
