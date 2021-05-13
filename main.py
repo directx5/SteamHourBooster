@@ -1,6 +1,6 @@
+import os
 import ctypes
 import datetime
-import os
 import subprocess
 
 import steam.client
@@ -16,12 +16,12 @@ else:
 
 with open("config", "r", encoding="UTF-8") as f:
     config = f.read().split("\n")
-    account = dict(zip(["username", "password"], config[0].split(":")))
+    account = config[0].split(":")
     games = [int(x.strip()) for x in set(config[1].split(",")) if x.strip().isdigit()]
 
 os.system("title Steam Hour Booster")
 client = steam.client.SteamClient()
-client.cli_login(**account)
+client.cli_login(*account)
 client.change_status(persona_state=1)
 client.games_played(games)
 os.system("cls")
