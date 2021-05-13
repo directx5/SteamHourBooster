@@ -21,7 +21,7 @@ with open("config", "r", encoding="UTF-8") as f:
 
 os.system("title Steam Hour Booster")
 client = steam.client.SteamClient()
-client.cli_login(account["username"], account["password"])
+client.cli_login(**account)
 client.change_status(persona_state=1)
 client.games_played(games)
 os.system("cls")
