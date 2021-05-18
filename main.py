@@ -7,7 +7,7 @@ import steam.client
 
 if not os.path.exists("config"):
     with open("config", "w", encoding="UTF-8") as config:
-        config.write(f"username:password\n{','.join(['game_id'] * 10)}")
+        config.write(f"username:password\n{('game_id,' * 10)[:-1]}")
     subprocess.call(["notepad", "config"])
 else:
     if str(input("Do you want to open the config file? [Y/N]: ")).lower() == "y":
