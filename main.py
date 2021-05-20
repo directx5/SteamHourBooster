@@ -6,17 +6,17 @@ import subprocess
 import steam.client
 
 if not os.path.exists("config"):
-    with open("config", "w", encoding="UTF-8") as config:
-        config.write(f"username:password\n{('game_id,' * 10)[:-1]}")
+    with open("config", "w", encoding="UTF-8") as file:
+        file.write(f"username:password\n{('game_id,' * 10)[:-1]}")
     subprocess.call(["notepad", "config"])
 else:
     if str(input("Do you want to open the config file? [Y/N]: ")).lower() == "y":
         subprocess.call(["notepad", "config"])
 
-with open("config", "r", encoding="UTF-8") as f:
-    config = f.read().split("\n")
-    account = [x.strip() for x in config[0].split(":")[:2]]
-    games = [int(c) for x in set(config[1].split(",")) if (c := x.strip()).isdigit()]
+with open("config", "r", encoding="UTF-8") as file:
+    content = file.read().split("\n")
+    account = [x.strip() for x in content[0].split(":")[:2]]
+    games = [int(c) for x in set(content[1].split(",")) if (c := x.strip()).isdigit()]
 
 os.system("title Steam Hour Booster")
 client = steam.client.SteamClient()
