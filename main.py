@@ -12,6 +12,8 @@ if not os.path.exists("config"):
 else:
     if str(input("Do you want to open the config file? [Y/N]: ")).lower() == "y":
         subprocess.call(["notepad", "config"])
+    else:
+        pass
 
 with open("config", "r", encoding="UTF-8") as file:
     content = file.read().split("\n")
