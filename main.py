@@ -25,12 +25,9 @@ client.games_played(games)
 os.system("cls")
 
 start = datetime.datetime.now()
-while True:
-    if ctypes.windll.user32.GetAsyncKeyState(0x1B):
-        break
-    else:
-        current_time = str(datetime.datetime.now() - start).split(".")[0]
-        print(f"\r[Steam Hour Booster] -> Username: [{client.user.name}] | Boosting For: [{current_time}]", end="")
-
-client.logout()
-client.disconnect()
+while not ctypes.windll.user32.GetAsyncKeyState(0x1B):
+    current_time = str(datetime.datetime.now() - start).split(".")[0]
+    print(f"\r[Steam Hour Booster] -> Username: [{client.user.name}] | Boosting For: [{current_time}]", end="")
+else:
+    client.logout()
+    client.disconnect()
